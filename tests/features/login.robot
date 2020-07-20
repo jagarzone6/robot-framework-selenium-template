@@ -7,26 +7,39 @@ Resource          ../steps/login_steps.robot
 Resource          ../steps/common_steps.robot
 Test Teardown     Close Browser
 Test Setup        Given browser is opened in my App page
+Default Tags      login
+
 *** Variables ***
 ${VALID USER}     demo
 ${VALID PASSWORD}    mode
 
 *** Test Cases ***
 Valid Login
+    [Tags]    hpath
     When user "demo" logs in with password "mode"
     Then welcome page should be open
 
 Invalid Username
-    Login With Invalid Credentials Should Fail    invalid    ${VALID PASSWORD}
+    [Tags]    negative
+    When user "invalid" logs in with password "${VALID PASSWORD}"
+    Then Login Should Have Failed
 
 Invalid Password
-    Login With Invalid Credentials Should Fail    ${VALID USER}    invalid
+    [Tags]    negative
+    When user "${VALID USER}" logs in with password "invalid"
+    Then Login Should Have Failed
 
 Invalid Username And Password
-    Login With Invalid Credentials Should Fail    invalid    whatever
+    [Tags]    negative
+    When user "invalid" logs in with password "whatever"
+    Then Login Should Have Failed
 
 Empty Username
-    Login With Invalid Credentials Should Fail    ${EMPTY}    whatever
+    [Tags]    negative
+    When user "${EMPTY}" logs in with password "whatever"
+    Then Login Should Have Failed
 
 Empty Password
-    Login With Invalid Credentials Should Fail    ${VALID USER}    ${EMPTY}
+    [Tags]    negative
+    When user "${VALID USER}" logs in with password "${EMPTY}"
+    Then Login Should Have Failed

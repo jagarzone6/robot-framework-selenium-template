@@ -28,11 +28,6 @@ Welcome Page Should Be Open
     Location Should Be    ${WELCOME URL}
     Title Should Be    Welcome Page
 
-Login With Invalid Credentials Should Fail
-    [Arguments]    ${username}    ${password}
-    User "${username}" logs in with password "${password}"
-    Login Should Have Failed
-
 Login Should Have Failed
     Location Should Be    ${ERROR URL}
     Title Should Be    Error Page
