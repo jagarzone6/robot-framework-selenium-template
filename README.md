@@ -1,16 +1,34 @@
-# robot-framework-template
-Start Selenium Hub using docker-compose:
+# robot-framework-selenium-template
+Use this repository as template for robot-framework selenium tests with BDD/Gherkin approach
+
+    ├── docker-compose.yaml
+    ├── Pipfile
+    └── tests
+        ├── features
+        │   └── login.robot
+        ├── pages
+        │   └── login_page.robot
+        └── steps
+            ├── common_steps.robot
+            └── login_steps.robot
+
+
+### Start Selenium Hub using docker-compose:
 
     docker-compose up -d
 
-Run all tests
+### Start demo app:
+
+    pipenv run python demoapp/server.py
+
+### Run all tests
 
     pipenv run robot tests/features
     
-Run happy path tests
+### Run happy path tests
 
     pipenv run robot -i hpath tests/features
 
-Run negative tests
+### Run negative tests
 
     pipenv run robot -i negative tests/features
