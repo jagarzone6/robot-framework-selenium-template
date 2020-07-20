@@ -5,12 +5,13 @@ Documentation     A resource file with reusable keywords and variables.
 ...               domain specific language. They utilize keywords provided
 ...               by the imported SeleniumLibrary.
 Library           SeleniumLibrary
+Variables         ../../environments.yaml
 
 *** Variables ***
-${SERVER}         127.0.0.1:7272
+${SERVER}         ${${env}.SERVER}
 ${BROWSER}        Chrome
 ${DELAY}          0
-${APP URL}      http://${SERVER}/
+${APP URL}        http://${SERVER}/
 ${WELCOME URL}    http://${SERVER}/welcome.html
 ${ERROR URL}      http://${SERVER}/error.html
 

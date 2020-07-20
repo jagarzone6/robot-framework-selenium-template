@@ -23,12 +23,12 @@ Use this repository as template for robot-framework selenium tests with BDD/Gher
 
 ### Run all tests
 
-    pipenv run robot tests/features
+    pipenv run robot --variable env:local tests/features
     
 ### Run happy path tests
 
-    pipenv run robot -i hpath tests/features
+    pipenv run robot -i hpath --variable env:local tests/features
 
 ### Run negative tests
 
-    pipenv run robot -i negative tests/features
+    pipenv run robot -i negative --variable env:local tests/features

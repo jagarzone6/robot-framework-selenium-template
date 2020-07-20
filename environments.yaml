@@ -1,0 +1,6 @@
+local:
+  SERVER: 127.0.0.1:7272
+dev:
+  SERVER: dev.server.app
+test:
+  SERVER: test.server.app

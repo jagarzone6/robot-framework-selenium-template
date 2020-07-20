@@ -9,6 +9,7 @@ verify_ssl = true
 robotframework = "*"
 robotframework-seleniumlibrary = "*"
 setuptools = "*"
+pyyaml = "*"
 
 [requires]
 python_version = "3.6"
