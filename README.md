@@ -1,8 +1,10 @@
 # robot-framework-selenium-template
 Use this repository as template for robot-framework selenium tests with BDD/Gherkin approach
 
+    ├── environments.yaml
     ├── docker-compose.yaml
     ├── Pipfile
+    ├── Pipfile.lock
     └── tests
         ├── features
         │   └── login.robot
